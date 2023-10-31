@@ -7,7 +7,12 @@ import { NewspaperIcon } from "@heroicons/react/20/solid";
 
 <header>
   <nav>
-    <h2><a class="site-title text-blue-900" href="/">{SITE_TITLE}</a></h2>
+    <div class="flex flex-col">
+      <a class="site-title " href="/">
+        <h2 class="text-blue-900">{SITE_TITLE}</h2>
+        <h4 class="designation text-sm float-left">Full stack developer</h4>
+      </a>
+    </div>
     <div class="internal-links decoration-black">
       <HeaderLink href="/">
         <HomeIcon className="h-6 w-6 text-black" />
@@ -45,8 +50,9 @@ import { NewspaperIcon } from "@heroicons/react/20/solid";
   h2 a.active {
     text-decoration: none;
   }
-  h2 a.site-title {
-    font-family: 'Rubik Mono One','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  a.site-title {
+    font-family: "Rubik Mono One", "Segoe UI", Tahoma, Geneva, Verdana,
+      sans-serif;
   }
   nav {
     display: flex;
