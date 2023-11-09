@@ -47,10 +47,8 @@ body {
 	line-height: 1.7;
 }
 main {
-	width: 720px;
+	width: 100%;
 	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
 }
 h1,
 h2,
@@ -133,9 +131,6 @@ hr {
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
-	}
-	main {
-		padding: 1em;
 	}
 }
 
