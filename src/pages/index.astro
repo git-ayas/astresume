@@ -12,15 +12,6 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
-      #profile-pic {
-        background-image: url("https://avatars.githubusercontent.com/u/32291808?v=4");
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        width: 200px;
-        border-radius: 50%;
-        margin: 0 auto;
-      }
       #about-section {
       }
       #contact-section {
@@ -32,6 +23,18 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
         font-family: "Montserrat", sans-serif;
         text-transform: uppercase;
       }
+
+      #relevant-experience,
+      #sidebar-content {
+        background-image: repeating-linear-gradient(
+          45deg,
+          var(--fallback-b1, oklch(var(--b1))),
+          var(--fallback-b1, oklch(var(--b1))) 13px,
+          var(--fallback-b2, oklch(var(--b2))) 13px,
+          var(--fallback-b2, oklch(var(--b2))) 14px
+        );
+        background-size: 40px 40px;
+      }
     </style>
   </head>
   <body data-theme="winter">
@@ -40,10 +43,27 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
       id="landing-home"
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-8 lg:p-16 mx-auto"
     >
+      <div class="hero col-span-1 md:col-span-3 min-h-screen bg-neutral rounded-lg">
+        <div class="hero-content flex-col lg:flex-row">
+          <img
+            src="https://avatars.githubusercontent.com/u/32291808?v=4"
+            class="rounded-lg shadow-2xl"
+          />
+          <div>
+            <h1 class="text-5xl font-bold text-neutral-content">I am a <u>full stack developer</u> </h1>
+            <p class="py-6 text-neutral-content">
+              An experienced professional with nearly a decade of experience in
+              developing and positioning services and products with a focus in
+              agile development practices that have provided fast turnarounds in
+              independent and collaborative contribution environments.
+            </p>
+            <a class="btn btn-primary" href="#about-section" >Learn More</a>
+          </div>
+        </div>
+      </div>
       <div id="sidebar-content" class="md:col-span-1">
-        <div id="profile-pic" class=""></div>
-        <div id="about-section" class="my-5">
-          <h5 class="section-title text-center bg-blue-950 text-white p-1">
+        <div id="about-section" class="">
+          <h5 class="section-title text-center bg-neutral text-white p-1">
             About Me
           </h5>
           <p class="text-justify">
