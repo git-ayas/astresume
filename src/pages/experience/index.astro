@@ -1,0 +1,134 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("experience")).sort(
+	(a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 100%;
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1rem);
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+			ul li:first-child img {
+				width: 100%;
+			}
+			ul li:first-child .title {
+				font-size: 2.369rem;
+			}
+			ul li img {
+				margin-bottom: 0.5rem;
+			}
+			ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0;
+				color: rgb(var(--black));
+				line-height: 1;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			ul li a:hover h4,
+			ul li a:hover .date {
+				color: rgb(var(--accent));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+					text-align: center;
+				}
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+				ul li:first-child .title {
+					font-size: 1.563em;
+				}
+			}
+		</style>
+	</head>
+	<body data-theme="light">
+		<Header />
+		<main class="mx-auto">
+			<section>
+				<ul
+					class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+				>
+					{
+						posts.map((orgData) => (
+							<li>
+								<div class="timeline-middle">
+									<img
+										class="timeline-icon timeline-icon-lg p-2"
+										src={orgData.data.orgLogo}
+										alt={orgData.data.company + " logo"}
+									/>
+								</div>
+								<div class="timeline-start timeline-box md:text-end mb-10">
+									<div class="text-lg font-black">
+										{orgData.data.company}
+									</div>
+									<time class="font-mono italic">
+										{orgData.data.startDate && (
+											<FormattedDate
+												date={orgData.data.startDate}
+											/>
+										)}
+									</time>{" "}
+									-{" "}
+									<time class="font-mono italic">
+										{orgData.data.endDate && (
+											<FormattedDate
+												date={orgData.data.endDate}
+											/>
+										)}
+									</time>
+									<p>{orgData.data.description}</p>
+								</div>
+								<hr />
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
