@@ -162,6 +162,6 @@ const posts = (await getCollection("experience")).sort(
       </div>
     </main>
     <Footer />
-    <NetlifyIdentityResolver />
+    <NetlifyIdentityResolver client:only="react" />
   </body>
 </html>
