@@ -11,8 +11,8 @@ const Decap = () => {
   });
 
   useEffect(() => {
-    CMS.init();
     netlifyIdentity.init();
+    CMS.init();
 
     return () => {
     }
