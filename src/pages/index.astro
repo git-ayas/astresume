@@ -7,6 +7,7 @@ import { PhoneIcon } from "@heroicons/react/24/outline";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
+import NetlifyIdentityResolver from "../components/NetlifyIdentityResolver";
 
 const posts = (await getCollection("experience")).sort(
 	(a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf(),
@@ -162,16 +163,6 @@ const posts = (await getCollection("experience")).sort(
       </div>
     </main>
     <Footer />
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/content-manager/";
-            });
-          }
-        });
-      }
-    </script>
+    <NetlifyIdentityResolver />
   </body>
 </html>
