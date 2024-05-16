@@ -7,12 +7,15 @@ const Decap = () => {
   netlifyIdentity.on("init", (user: netlifyIdentity.User | null) => {
     if (!user) {
       netlifyIdentity.open("login");
+    }else{
+      (window as any).netlifyIdentity = netlifyIdentity;
+      CMS.init();
     }
+    
   });
 
   useEffect(() => {
     netlifyIdentity.init();
-    CMS.init();
 
     return () => {
     }
