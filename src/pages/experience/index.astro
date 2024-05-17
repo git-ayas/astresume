@@ -6,8 +6,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
-const posts = (await getCollection("blog")).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+const posts = (await getCollection("experience")).sort(
+	(a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf(),
 );
 ---
 
@@ -47,7 +47,6 @@ const posts = (await getCollection("blog")).sort(
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
-				border-radius: 12px;
 			}
 			ul li a {
 				display: block;
@@ -89,24 +88,41 @@ const posts = (await getCollection("blog")).sort(
 		<Header />
 		<main class="mx-auto">
 			<section>
-				<ul>
+				<ul
+					class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+				>
 					{
-						posts.map((post) => (
+						posts.map((orgData) => (
 							<li>
-								<a href={`/blog/${post.slug}/`}>
+								<div class="timeline-middle">
 									<img
-										width={720}
-										height={360}
-										src={post.data.heroImage}
-										alt={`${post.slug} post thumbnail`}
+										class="timeline-icon timeline-icon-lg p-2"
+										src={orgData.data.orgLogo}
+										alt={orgData.data.company + " logo"}
 									/>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate
-											date={post.data.pubDate}
-										/>
-									</p>
-								</a>
+								</div>
+								<div class="timeline-start timeline-box md:text-end mb-10">
+									<div class="text-lg font-black">
+										{orgData.data.company}
+									</div>
+									<time class="font-mono italic">
+										{orgData.data.startDate && (
+											<FormattedDate
+												date={orgData.data.startDate}
+											/>
+										)}
+									</time>{" "}
+									-{" "}
+									<time class="font-mono italic">
+										{orgData.data.endDate && (
+											<FormattedDate
+												date={orgData.data.endDate}
+											/>
+										)}
+									</time>
+									<p>{orgData.data.description}</p>
+								</div>
+								<hr />
 							</li>
 						))
 					}
