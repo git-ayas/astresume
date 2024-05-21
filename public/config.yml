@@ -9,7 +9,8 @@ backend:
 # These lines should *not* be indented
 media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
-
+extension: "mdx"
+format: "frontmatter"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog Posts" # Used in the UI
@@ -32,7 +33,7 @@ collections:
       - { label: "Organization Name", name: "company", widget: "string" }
       - { label: "Role", name: "role", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Start Date", name: "startDate", widget: "datetime" }
-      - { label: "End Date", name: "endDate", widget: "datetime" }
+      - { label: "Start Date", name: "startDate", widget: "datetime", dateFormat: "DD.MM.YYYY", timeFormat: ""}
+      - { label: "End Date", name: "endDate", widget: "datetime", dateFormat: "DD.MM.YYYY", timeFormat: "" }
       - { label: "Company Image", name: "orgLogo", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
