@@ -30,6 +30,7 @@
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "daisyui": "^4.9.0"
+    "daisyui": "^4.9.0",
+    "@rollup/plugin-yaml": "^4.0.1"
   }
 }

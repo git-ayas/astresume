@@ -8,6 +8,9 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import NetlifyIdentityResolver from "../components/NetlifyIdentityResolver";
+import HomeContent from "../content/pages/home.yml";
+
+console.log("HomeContent", HomeContent);
 
 const posts = (await getCollection("experience")).sort(
 	(a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf(),
@@ -115,6 +118,9 @@ const posts = (await getCollection("experience")).sort(
         </div>
       </div>
       <div id="main-content" class="md:col-span-2">
+        <pre>
+          {JSON.stringify(HomeContent, null, 2)}
+        </pre>
         <div id="relevant-experience">
           <h5 class="section-title text-center bg-neutral text-white p-1">
             Relevant Experience
