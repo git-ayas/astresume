@@ -1,14 +1,17 @@
-
-blurb: "An experienced professional with nearly a decade of experience in
-    developing and positioning services and products with a focus in
-    agile development practices that have provided fast turnarounds in
-    independent and collaborative contribution environments."
-cta: { label: "Learn More", link: "#about-section", widget: "string", className: "btn btn-primary" }
-phoneNo: "+91 7259619029"
-email: "ayas.ping@gmail.com"
+blurb: An experienced professional with nearly a decade of experience in
+  developing and positioning services and products with a focus in agile
+  development practices that have provided fast turnarounds in independent and
+  collaborative contribution environments.
+cta:
+  label: Learn More
+  link: "#about-section"
+  widget: string
+  className: btn btn-primary
+phoneNo: +91 7259619029
+email: ayas.ping@gmail.com
 education_certifications:
-  - title: "B.E. Information Technology"
-    institution: "Visvesvaraya Technological University"
+  - title: B.E. Information Technology
+    institution: Kalol Institute of Technology & Research Center
     year: "2012"
-    location: "Kalol, Gujarat, India"
-    description: "Kalol Institute of Technology & Research Center"
+    location: Kalol, Gujarat, India
+    description: Kalol Institute of Technology & Research Center
