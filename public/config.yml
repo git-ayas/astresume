@@ -19,7 +19,8 @@ collections:
         name: "homepage"
         file: "src/content/pages/home.yml"
         fields:
-          - { label: "Blurb", name: "blurb", widget: "string" }
+          - { label: "Hero Image", name: "heroImage", widget: "image" }
+          - { label: "Blurb", name: "blurb", widget: "text" }
           - {
               label: "CTA",
               name: "cta",
@@ -29,7 +30,7 @@ collections:
                   { label: "Label", name: "label", widget: "string" },
                   { label: "Link", name: "link", widget: "string" },
                   { label: "Widget", name: "widget", widget: "string" },
-                  { label: "Class Name", name: "className", widget: "string" },
+                  { label: "CSS class", name: "className", widget: "string" },
                 ],
             }
           - { label: "Phone Number", name: "phoneNo", widget: "string" }
@@ -51,7 +52,7 @@ collections:
                   {
                     label: "Description",
                     name: "description",
-                    widget: "string",
+                    widget: "text",
                   },
                 ],
             }
