@@ -9,7 +9,7 @@ import db from "@astrojs/db";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aysastresume.vercel.app',
+  site: 'https://ayaskant-homepage.netlify.app',
   vite: {
     plugins: [yaml()],
   },
