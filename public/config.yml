@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: feature/pages-editor # Branch to update (optional; defaults to master)
   commit_messages:
     create: "[content] Create {{collection}} “{{slug}}”"
     update: "[content] Update {{collection}} “{{slug}}”"
@@ -12,6 +12,50 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 extension: "mdx"
 format: "frontmatter"
 collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "homepage"
+        file: "src/content/pages/home.yml"
+        fields:
+          - { label: "Blurb", name: "blurb", widget: "string" }
+          - {
+              label: "CTA",
+              name: "cta",
+              widget: "object",
+              fields:
+                [
+                  { label: "Label", name: "label", widget: "string" },
+                  { label: "Link", name: "link", widget: "string" },
+                  { label: "Widget", name: "widget", widget: "string" },
+                  { label: "Class Name", name: "className", widget: "string" },
+                ],
+            }
+          - { label: "Phone Number", name: "phoneNo", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - {
+              label: "Education Certifications",
+              name: "education_certifications",
+              widget: "list",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Institution",
+                    name: "institution",
+                    widget: "string",
+                  },
+                  { label: "Year", name: "year", widget: "string" },
+                  { label: "Location", name: "location", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                  },
+                ],
+            }
+
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog Posts" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
@@ -33,7 +77,19 @@ collections:
       - { label: "Organization Name", name: "company", widget: "string" }
       - { label: "Role", name: "role", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Start Date", name: "startDate", widget: "datetime", dateFormat: "DD.MM.YYYY", timeFormat: ""}
-      - { label: "End Date", name: "endDate", widget: "datetime", dateFormat: "DD.MM.YYYY", timeFormat: "" }
+      - {
+          label: "Start Date",
+          name: "startDate",
+          widget: "datetime",
+          dateFormat: "DD.MM.YYYY",
+          timeFormat: "",
+        }
+      - {
+          label: "End Date",
+          name: "endDate",
+          widget: "datetime",
+          dateFormat: "DD.MM.YYYY",
+          timeFormat: "",
+        }
       - { label: "Company Image", name: "orgLogo", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
