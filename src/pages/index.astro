@@ -9,12 +9,23 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import NetlifyIdentityResolver from "../components/NetlifyIdentityResolver";
 import HomeContent from "../content/pages/home.yml";
+import TypeWriter from "../components/TypeWriter";
 
 console.log("HomeContent", HomeContent);
 
 const posts = (await getCollection("experience")).sort(
-	(a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf(),
+  (a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf()
 );
+const {
+  heroImage,
+  blurb,
+  cta,
+  phoneNo,
+  email,
+  education_certifications,
+  skills,
+  hats
+} = HomeContent;
 ---
 
 <!doctype html>
@@ -53,55 +64,59 @@ const posts = (await getCollection("experience")).sort(
       id="landing-home"
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-8 lg:p-16 mx-auto"
     >
-      <div class="hero col-span-1 md:col-span-3 min-h-min lg:py-4 bg-neutral rounded-lg">
+      <div
+        class="hero col-span-1 md:col-span-3 min-h-min lg:py-4 bg-neutral rounded-lg"
+      >
         <div class="hero-content flex-col lg:flex-row">
-          <img
-            src="https://avatars.githubusercontent.com/u/32291808?v=4"
-            class="rounded-full shadow-2xl"
-          />
+          <img src={heroImage} class="rounded-full shadow-2xl" />
           <div>
-            <h1 class="text-5xl font-bold text-neutral-content">I am a <u>full stack developer</u> </h1>
+            <h1 class="text-5xl font-bold text-neutral-content">
+              <TypeWriter
+                textArray={hats.map((hat: { title: any; }) => hat.title)}
+                backspace={true}
+                prefix="I am a "
+                suffix="  ."
+                client:only="react"
+              />
+            </h1>
             <p class="py-6 text-neutral-content">
-              An experienced professional with nearly a decade of experience in
-              developing and positioning services and products with a focus in
-              agile development practices that have provided fast turnarounds in
-              independent and collaborative contribution environments.
+              {blurb}
             </p>
-            <a class="btn btn-primary" href="#about-section" >Learn More</a>
+            <a class={cta.className} href={cta.link}>{cta.label}</a>
           </div>
         </div>
       </div>
       <div id="sidebar-content" class="md:col-span-1">
-        <div id="about-section" class="">
-          <h5 class="section-title text-center bg-neutral text-white p-1">
-            About Me
-          </h5>
-          <p class="text-justify">
-            An experienced professional with nearly a decade of experience in
-            developing and positioning services and products with a focus in
-            agile development practices that have provided fast turnarounds in
-            independent and collaborative contribution environments.
-          </p>
-        </div>
         <div id="contact-section">
           <h5 class="section-title text-center bg-neutral text-white p-1">
             Contact
           </h5>
           <ul>
             <li class="flex justify-center items-center">
-              <PhoneIcon
-                className="bg-neutral text-white p-1.5 rounded-3xl mr-1"
-                width={26}
-                height={26}
-              /> +91 7259619029
+              <a
+                class="flex justify-center items-center"
+                href={`tel:${phoneNo}`}
+              >
+                <PhoneIcon
+                  className="bg-neutral text-white p-1.5 rounded-3xl mr-1"
+                  width={26}
+                  height={26}
+                />
+                {phoneNo}
+              </a>
             </li>
             <li class="flex justify-center items-center">
-              <EnvelopeIcon
-                className="bg-neutral text-white p-1.5 rounded-3xl mr-1"
-                width={26}
-                height={26}
-              />
-              ayas.ping@gmail.com
+              <a
+                class="flex justify-center items-center"
+                href=`mailto:${email}`
+              >
+                <EnvelopeIcon
+                  className="bg-neutral text-white p-1.5 rounded-3xl mr-1"
+                  width={26}
+                  height={26}
+                />
+                {email}
+              </a>
             </li>
           </ul>
         </div>
@@ -110,61 +125,87 @@ const posts = (await getCollection("experience")).sort(
             Education & Certifications
           </h5>
           <ul>
-            <li>
-              <h6 class="font-bold">B.E. Information Technology</h6>
-              <p>Kalol Institute of Technology & Research Center</p>
-            </li>
+            {
+              education_certifications.map(
+                (cert: {
+                  title: string;
+                  institution: string;
+                  year: string;
+                }) => (
+                  <li>
+                    <h5 class="font-bold">{cert.title}</h5>
+                    <p>{cert.institution}</p>
+                  </li>
+                )
+              )
+            }
+          </ul>
+        </div>
+        <div id="about-section" class="">
+          <h5 class="section-title text-center bg-neutral text-white p-1">
+            Skills
+          </h5>
+          <ul>
+            {
+              skills.map((skillGroup: { title: unknown; items: any[]; }) => (
+                <li class="mt-5">
+                  <h5>{skillGroup.title}</h5>
+                  <hr />
+                  {skillGroup.items.map((skill: { title: unknown; }) => (
+                    <span class="btn btn-xs">{skill.title}</span>
+                  ))}
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
       <div id="main-content" class="md:col-span-2">
-        <pre>
-          {JSON.stringify(HomeContent, null, 2)}
-        </pre>
         <div id="relevant-experience">
           <h5 class="section-title text-center bg-neutral text-white p-1">
             Relevant Experience
           </h5>
           <ul
-					class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
-				>
-					{
-						posts.map((orgData) => (
-							<li>
-								<div class="timeline-middle">
-									<img
-										class="timeline-icon timeline-icon-lg p-2"
-										src={orgData.data.orgLogo}
-										alt={orgData.data.company + " logo"}
-									/>
-								</div>
-								<div class="timeline-start timeline-box md:text-end mb-10">
-									<div class="text-lg font-black">
-										{orgData.data.company}
-									</div>
-									<time class="font-mono italic">
-										{orgData.data.startDate && (
-											<FormattedDate
-												date={orgData.data.startDate}
-											/>
-										)}
-									</time>{" "}
-									-{" "}
-									<time class="font-mono italic">
-										{orgData.data.endDate && (
-											<FormattedDate
-												date={orgData.data.endDate}
-											/>
-										)}
-									</time>
-									<p>{orgData.data.description}</p>
-                  <a role="button" class="btn btn-xs" target="_blank" href={`./experience/${orgData.slug}`}>details ></a>
-								</div>
-								<hr />
-							</li>
-						))
-					}
-				</ul>
+            class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+          >
+            {
+              posts.map((orgData) => (
+                <li>
+                  <div class="timeline-middle">
+                    <img
+                      class="timeline-icon timeline-icon-lg p-2"
+                      src={orgData.data.orgLogo}
+                      alt={orgData.data.company + " logo"}
+                    />
+                  </div>
+                  <div class="timeline-start timeline-box md:text-end mb-10">
+                    <div class="text-lg font-black">{orgData.data.company}</div>
+                    <time class="font-mono italic">
+                      {orgData.data.startDate && (
+                        <FormattedDate date={orgData.data.startDate} />
+                      )}
+                    </time>{" "}
+                    -{" "}
+                    <time class="font-mono italic">
+                      {orgData.data.endDate && (
+                        <FormattedDate date={orgData.data.endDate} />
+                      )}
+                    </time>
+                    <p>{orgData.data.description}</p>
+                    <a
+                      role="button"
+                      class="btn btn-xs"
+                      target="_blank"
+                      href={`./experience/${orgData.slug}`}
+                    >
+                      details >
+                    </a>
+                  </div>
+                  <hr />
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     </main>

@@ -6,10 +6,85 @@ blurb: An experienced professional with nearly a decade of experience in
 cta:
   label: Learn More
   link: "#about-section"
-  widget: string
   className: btn btn-primary
 phoneNo: +91 7259619029
 email: ayas.ping@gmail.com
+hats:
+  - title: Full Stack Developer
+    description: "I have been working as a Full Stack Developer for the past 9
+      years. I have experience in developing web applications using various
+      technologies and frameworks."
+  - title: Technical Lead
+    description: "I have experience in leading technical teams, setting up
+      project timelines, and ensuring that the project is delivered on time."
+  - title: DevOps Engineer
+    description: "I have experience in setting up CI/CD pipelines, containerizing
+      applications using Docker, and deploying applications on cloud platforms
+      like AWS, Azure, and GCP."
+  - title: Project Lead
+    description: "I have experience in leading teams of developers, setting up
+      project timelines, and ensuring that the project is delivered on time."
+skills:
+  - title: Frontend
+    items:
+      - title: HTML
+      - title: CSS
+      - title: JavaScript
+      - title: React
+      - title: Angular
+      - title: Vue
+  - title: Backend
+    items:
+      - title: Node.js
+      - title: Express
+      - title: NestJS
+      - title: Spring Boot
+      - title: Flask
+  - title: Database
+    items:
+      - title: MySQL
+      - title: PostgreSQL
+      - title: MongoDB
+      - title: Redis
+      - title: SQLite
+  - title: DevOps
+    items:
+      - title: Docker
+      - title: Kubernetes
+      - title: Jenkins
+      - title: BitBucket Pipelines
+      - title: GitHub Actions
+      - title: AWS
+      - title: Azure
+      - title: GCP
+  - title: Testing
+    items:
+      - title: Jest
+      - title: Mocha
+      - title: Chai
+      - title: Cypress
+  - title: Tools
+    items:
+      - title: Git
+      - title: GitHub
+      - title: GitLab
+      - title: Bitbucket
+      - title: Jira
+      - title: Confluence
+      - title: Slack
+      - title: Trello
+  - title: Methodologies
+    items:
+      - title: Agile
+      - title: Scrum
+      - title: Kanban
+      - title: Lean
+      - title: Waterfall
+  - title: Languages
+    items:
+      - title: English
+      - title: Hindi
+      - title: Gujarati
 education_certifications:
   - title: B.E. Information Technology
     institution: Kalol Institute of Technology & Research Center
