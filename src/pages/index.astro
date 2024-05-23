@@ -70,7 +70,7 @@ const {
         <div class="hero-content flex-col lg:flex-row">
           <img src={heroImage} class="rounded-full shadow-2xl" />
           <div>
-            <h1 class="text-5xl font-bold text-neutral-content">
+            <div class="text-xl md:text-5xl font-bold text-neutral-content">
               <TypeWriter
                 textArray={hats.map((hat: { title: any; }) => hat.title)}
                 backspace={true}
@@ -78,7 +78,7 @@ const {
                 suffix="  ."
                 client:only="react"
               />
-            </h1>
+            </div>
             <p class="py-6 text-neutral-content">
               {blurb}
             </p>
