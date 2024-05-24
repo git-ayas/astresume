@@ -16,9 +16,7 @@ orgLogo: /images/uploads/vr-devotee-logo.jpg
 
 ▪ Developed an interactive layer using three.js, enabling users to engage and make offerings during live streams of temples.
 
-▪ Implemented significant enhancements to the web app, including improvements to the content panel and web views of the mobile
-
-app.
+▪ Implemented significant enhancements to the web app, including improvements to the content panel and web views of the mobile app.
 
 ▪ Added blog publishing capabilities to the VR devotee app stack, expanding content delivery options.
 
@@ -26,12 +24,6 @@ app.
 
 ▪ Optimized the VR Devotee React Native app, reducing re-renders and interruptions to improve overall performance.
 
-▪ Executed backend scripting for a large-scale content migration from S3 buckets to a YouTube channel, resulting in reduced cloud
+▪ Executed backend scripting for a large-scale content migration from S3 buckets to a YouTube channel, resulting in reduced cloud cost overheads.
 
-cost overheads.
-
-▪ Served as the engineering liaison to the marketing team, collaborating on analytics initiatives. This included consulting on data
-
-capture strategies using Clevertap and Firebase analytics, as well as assisting in the implementation of multiple user journeys and
-
-lead conversion funnels.
+▪ Served as the engineering liaison to the marketing team, collaborating on analytics initiatives. This included consulting on data capture strategies using Clevertap and Firebase analytics, as well as assisting in the implementation of multiple user journeys and lead conversion funnels.
