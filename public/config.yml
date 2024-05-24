@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: bugfix/9-relevant-experience-bugs # Branch to update (optional; defaults to master)
   commit_messages:
     create: "[content] Create {{collection}} “{{slug}}”"
     update: "[content] Update {{collection}} “{{slug}}”"
@@ -98,7 +98,7 @@ collections:
     label: "Experience" # Used in the UI
     folder: "src/content/experience" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template
+    slug: "{{role}}-at-{{company}}" # Filename template
     fields: # The fields for each document, usually in front matter
       - { label: "Organization Name", name: "company", widget: "string" }
       - { label: "Role", name: "role", widget: "string" }
