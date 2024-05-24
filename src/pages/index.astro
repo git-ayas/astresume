@@ -11,9 +11,8 @@ import NetlifyIdentityResolver from "../components/NetlifyIdentityResolver";
 import HomeContent from "../content/pages/home.yml";
 import TypeWriter from "../components/TypeWriter";
 
-
 const experiences = (await getCollection("experience")).sort(
-  (a, b) => b.data.startDate.valueOf()- a.data.startDate.valueOf() 
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
 );
 const {
   heroImage,
@@ -23,7 +22,7 @@ const {
   email,
   education_certifications,
   skills,
-  hats
+  hats,
 } = HomeContent;
 ---
 
@@ -71,7 +70,7 @@ const {
           <div>
             <div class="text-xl md:text-5xl font-bold text-neutral-content">
               <TypeWriter
-                textArray={hats.map((hat: { title: any; }) => hat.title)}
+                textArray={hats.map((hat: { title: any }) => hat.title)}
                 backspace={true}
                 prefix="I am a "
                 suffix="  ."
@@ -146,11 +145,11 @@ const {
           </h5>
           <ul>
             {
-              skills.map((skillGroup: { title: unknown; items: any[]; }) => (
+              skills.map((skillGroup: { title: unknown; items: any[] }) => (
                 <li class="mt-5">
                   <h5>{skillGroup.title}</h5>
                   <hr />
-                  {skillGroup.items.map((skill: { title: unknown; }) => (
+                  {skillGroup.items.map((skill: { title: unknown }) => (
                     <span class="btn btn-xs">{skill.title}</span>
                   ))}
                 </li>
@@ -170,14 +169,30 @@ const {
             {
               experiences.map((orgData) => (
                 <li>
-                  <div class="timeline-middle">
-                    <img
-                      class="timeline-icon timeline-icon-lg p-2"
-                      src={orgData.data.orgLogo}
-                      alt={orgData.data.company + " logo"}
-                    />
+                  <div class="timeline-start">
+                    <a
+                      target="_blank"
+                      role="button"
+                      href={`./experience/${orgData.slug}`}
+                    >
+                      <img
+                        class="timeline-icon timeline-icon-lg w-32 p-2"
+                        src={orgData.data.orgLogo}
+                        alt={orgData.data.company + " logo"}
+                      />
+                    </a>
                   </div>
-                  <div class="timeline-start timeline-box md:text-end mb-10">
+                  <div class="timeline-middle">
+                    <a
+                      role="button"
+                      class="btn btn-info rounded-2xl justify-center text-neutral-50 btn-xs"
+                      target="_blank"
+                      href={`./experience/${orgData.slug}`}
+                    >
+                      i
+                    </a>
+                  </div>
+                  <div class="timeline-end timeline-box md:text-end mb-10">
                     <div class="text-lg font-black">{orgData.data.company}</div>
                     <time class="font-mono italic">
                       {orgData.data.startDate && (
@@ -190,7 +205,7 @@ const {
                         <FormattedDate date={orgData.data.endDate} />
                       )}
                     </time>
-                    <p>{orgData.data.description}</p>
+                    <p class="text-justify">{orgData.data.description}</p>
                     <a
                       role="button"
                       class="btn btn-xs"
@@ -204,6 +219,17 @@ const {
                 </li>
               ))
             }
+            <li>
+              <div class="timeline-middle">
+                <a
+                  role="button"
+                  class="btn btn-info rounded-2xl justify-center text-neutral-50 btn-xs"
+                  href="#"
+                >
+                  o
+                </a>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
