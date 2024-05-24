@@ -12,9 +12,7 @@ startDate: 01.06.2017
 endDate: 01.09.2019
 orgLogo: /images/uploads/freelance-logo.png
 ---
-▪ Partnered with a diverse clientele, including Royal Wolf Tattoos, Edge Advanced Solutions, Piya International, Saurashtra Agricare,
-
-Critarac Technologies, Verbinden Communication Pvt. Ltd., and Merafly.com.
+▪ Partnered with a diverse clientele, including Royal Wolf Tattoos, Edge Advanced Solutions, Piya International, Saurashtra Agricare, Critarac Technologies, Verbinden Communication Pvt. Ltd., and Merafly.com.
 
 ▪ Collaborated on the development of the Paypay Japan PHP SDK, contributing to its open-source repository on GitHub (GitHub Link: [paypay/paypayopa-sdk-php](https://github.com/paypay/paypayopa-sdk-php)).
 
