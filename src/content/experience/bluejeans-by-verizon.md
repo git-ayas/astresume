@@ -14,6 +14,6 @@ orgLogo: /images/uploads/vz-2_small_rgb_p.png
 * ▪ Led development efforts for the maintenance and enhancement of recording playback pages for both Bluejeans Meetings and Bluejeans Events.
 * ▪ Managed a team of full-time and contracted resources while providing mentorship to interns on various projects.
 * ▪ Participated in optimizing applications to meet compliance standards, including GDPR, GSAM, FEDRAMP, and HIPAA.
-* ▪ Collaborated with the Product Support and Recordings Back-end teams to address customer issues and ▪ implement necessary fixes.
+* ▪ Collaborated with the Product Support and Recordings Back-end teams to address customer issues and implement necessary fixes.
 * ▪ Pioneered experimental recording playback features, such as client-side media conversion and offline playback, to reduce infrastructure processing and bandwidth overheads, enhancing the overall playback experience.
 * ▪ Recognized for: Acknowledged for resolving a critical bug in Bluejeans login that disrupted SAML logins with Microsoft integrations. Successfully debugged and rectified the issue within a legacy application.
