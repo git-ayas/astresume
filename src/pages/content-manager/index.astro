@@ -1,17 +1,18 @@
 ---
 import Decap from "../../components/Decap";
-
+const { NODE_ENV } = process.env;
+const PATH_PREFIX = NODE_ENV !== "development" ? "" : "content-manager/";
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Management System</title>
-    <link rel="stylesheet" href="./content-manager/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href={`./${PATH_PREFIX}style.css`} />
+  </head>
+  <body>
     <Decap client:only="react" />
-    
-</body>
+  </body>
 </html>

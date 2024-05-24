@@ -97,6 +97,7 @@ collections:
   - name: "experience" # Used in routes, e.g., /admin/collections/experience
     label: "Experience" # Used in the UI
     folder: "src/content/experience" # The path to the folder where the documents are stored
+    identifier_field: "company" # The field that should be used as the document identifier
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template
     fields: # The fields for each document, usually in front matter
