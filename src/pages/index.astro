@@ -11,10 +11,9 @@ import NetlifyIdentityResolver from "../components/NetlifyIdentityResolver";
 import HomeContent from "../content/pages/home.yml";
 import TypeWriter from "../components/TypeWriter";
 
-console.log("HomeContent", HomeContent);
 
-const posts = (await getCollection("experience")).sort(
-  (a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf()
+const experiences = (await getCollection("experience")).sort(
+  (a, b) => b.data.startDate.valueOf()- a.data.startDate.valueOf() 
 );
 const {
   heroImage,
@@ -169,7 +168,7 @@ const {
             class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
           >
             {
-              posts.map((orgData) => (
+              experiences.map((orgData) => (
                 <li>
                   <div class="timeline-middle">
                     <img
