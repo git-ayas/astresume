@@ -5,7 +5,7 @@ description: Led the technical team from inception, driving innovation and
   scalability. My role involved architecting robust systems, fostering a
   collaborative culture, and ensuring seamless user experiences to revolutionise
   property search.
-startDate: 01.12.2023
+startDate: 12.01.2024
 endDate: 01.03.2024
 orgLogo: /images/uploads/lnh.jpg
 ---
