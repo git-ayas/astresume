@@ -6,7 +6,7 @@ description: Led the technical team from inception, driving innovation and
   collaborative culture, and ensuring seamless user experiences to revolutionise
   property search.
 startDate: 12.01.2024
-endDate: 01.03.2024
+endDate: 02.03.2024
 orgLogo: /images/uploads/lnh.jpg
 ---
 ▪ Helped establish development best practices and processes
