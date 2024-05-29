@@ -8,8 +8,8 @@ description: As a Software Developer at Kalpnik, I played a pivotal role in
   VR Devotee services, and managing large-scale content migration. I also
   collaborated with the marketing team on analytics strategies, improving user
   engagement and conversion.
-startDate: 01.10.2019
-endDate: 01.05.2020
+startDate: 10.01.2019
+endDate: 05.01.2020
 orgLogo: /images/uploads/vr-devotee-logo.jpg
 ---
 ▪ Assumed full-time responsibilities within the engineering team at Kalpnik, actively contributing to the development of the web app, mobile app, and APIs.
