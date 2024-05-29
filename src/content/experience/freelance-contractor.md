@@ -8,8 +8,8 @@ description: As a Freelance Web Developer/Marketer, I collaborated with diverse
   integrating it into Biocon India's frontpage with server-side rendering in PHP
   and Vue.js. My versatile skills in development and marketing drove impactful
   results across various projects.
-startDate: 01.06.2017
-endDate: 01.09.2019
+startDate: 06.01.2017
+endDate: 10.01.2019
 orgLogo: /images/uploads/freelance-logo.png
 ---
 ▪ Partnered with a diverse clientele, including Royal Wolf Tattoos, Edge Advanced Solutions, Piya International, Saurashtra Agricare, Critarac Technologies, Verbinden Communication Pvt. Ltd., and Merafly.com.
