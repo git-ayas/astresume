@@ -105,17 +105,17 @@ collections:
       - { label: "Role", name: "role", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - {
-          label: "Start Date",
+          label: "Start Date(MM.DD.YYYY)",
           name: "startDate",
           widget: "datetime",
-          dateFormat: "DD.MM.YYYY",
+          dateFormat: "MM.DD.YYYY",
           timeFormat: "",
         }
       - {
-          label: "End Date",
+          label: "End Date(MM.DD.YYYY)",
           name: "endDate",
           widget: "datetime",
-          dateFormat: "DD.MM.YYYY",
+          dateFormat: "MM.DD.YYYY",
           timeFormat: "",
         }
       - { label: "Company Image", name: "orgLogo", widget: "image" }
