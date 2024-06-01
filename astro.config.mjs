@@ -4,14 +4,28 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import yaml from '@rollup/plugin-yaml';
-
+import { execSync } from 'child_process'
 import db from "@astrojs/db";
+
+const branchName = execSync('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  console.log(stdout)
+})
+
+
+
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ayaskant-homepage.netlify.app',
   vite: {
     plugins: [yaml()],
+    define: {
+      'import.meta.env.editorBranch': `\"${branchName.toString().trim()}\"` || 'master'
+    }
   },
   integrations: [mdx(), sitemap(), tailwind(), react(), db()]
 });
