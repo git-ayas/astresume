@@ -19,7 +19,7 @@ const equivalentBranches = execSync(`git branch --contains ${currentCommitHashSt
   }
 })
 const equivalentBranchesStr = equivalentBranches.toString().trim()
-const branchRefSegments = equivalentBranchesStr.split('*').map((branch) => branch.trim()).filter((branch) => branch != null && branch !== '' && branch !== 'HEAD')
+const branchRefSegments = equivalentBranchesStr.split('*').map((branch) => branch.trim()).filter((branch) => branch != null && branch !== '' && branch !== 'HEAD' && branch!= '(HEAD detached at FETCH_HEAD)')
 const  branchName = branchRefSegments[0]
 
 
