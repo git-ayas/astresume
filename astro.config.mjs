@@ -7,6 +7,7 @@ import yaml from '@rollup/plugin-yaml';
 import { execSync } from 'child_process'
 import db from "@astrojs/db";
 
+const currentBranch = process.env.BRANCH 
 const currentCommitHash = execSync('git rev-parse --short HEAD', (err, stdout, stderr) => {
   if (err) {
     console.error(err)
@@ -23,7 +24,8 @@ const branchRefSegments = equivalentBranchesStr.split('*').map((branch) => branc
 console.log("branchRefSegments:", branchRefSegments)
 const  branchName = branchRefSegments[0]
 
-
+const evaledBranchName = currentBranch ? currentBranch : branchName
+console.log("evaledBranchName:", evaledBranchName)
 
 
 // https://astro.build/config
