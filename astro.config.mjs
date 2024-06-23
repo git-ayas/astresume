@@ -7,15 +7,20 @@ import yaml from '@rollup/plugin-yaml';
 import { execSync } from 'child_process'
 import db from "@astrojs/db";
 
-const branchSymRefPath = execSync('git symbolic-ref HEAD', (err, stdout, stderr) => {
+const currentCommitHash = execSync('git rev-parse --short HEAD', (err, stdout, stderr) => {
   if (err) {
     console.error(err)
-    return
   }
-  console.log(`[Prebuild Tasks - ${(new Date ()).toISOString()}]:`,stdout)
 })
-const branchRefSegments = branchSymRefPath.toString().split('/')
-const  branchName = branchRefSegments[branchRefSegments.length-1]
+const currentCommitHashStr = currentCommitHash.toString().trim()
+const equivalentBranches = execSync(`git branch --contains ${currentCommitHashStr}`, (err, stdout, stderr) => {
+  if (err) {
+    console.error(err)
+  }
+})
+const equivalentBranchesStr = equivalentBranches.toString().trim()
+const branchRefSegments = equivalentBranchesStr.split('*').map((branch) => branch.trim()).filter((branch) => branch != null && branch !== '' && branch !== 'HEAD')
+const  branchName = branchRefSegments[0]
 
 
 
@@ -26,7 +31,7 @@ export default defineConfig({
   vite: {
     plugins: [yaml()],
     define: {
-      'import.meta.env.editorBranch': `\"${branchName.toString().trim()}\"` || 'master'
+      'import.meta.env.editorBranch': `"${branchName}"` 
     }
   },
   integrations: [mdx(), sitemap(), tailwind(), react(), db()]
