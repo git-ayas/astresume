@@ -1,7 +1,6 @@
 ---
 import Decap from "../../components/Decap";
-import { getEditorAssetsPath } from "../../utils/environment";
-
+import { getEditorAssetsPath, getEditorBranch } from "../../utils/environment";
 ---
 
 <!doctype html>
@@ -13,6 +12,15 @@ import { getEditorAssetsPath } from "../../utils/environment";
     <link rel="stylesheet" href={`./${getEditorAssetsPath()}style.css`} />
   </head>
   <body>
+    <div class="navbar bg-neutral text-neutral-content">
+      <button class="btn btn-ghost text-xl">Content Editor</button>
+      <div class="navbar-end">
+        <button class="btn">
+          Publishing to :
+          <div class="badge badge-secondary">{getEditorBranch()}</div>
+        </button>
+      </div>
+    </div>
     <Decap client:only="react" />
   </body>
 </html>
