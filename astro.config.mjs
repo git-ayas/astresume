@@ -12,7 +12,7 @@ const branchName = execSync('git rev-parse --abbrev-ref HEAD', (err, stdout, std
     console.error(err)
     return
   }
-  console.log(stdout)
+  console.log(`[Prebuild Tasks - ${(new Date ()).toISOString()}]:`,stdout)
 })
 
 
