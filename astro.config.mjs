@@ -7,7 +7,7 @@ import yaml from '@rollup/plugin-yaml';
 import { execSync } from 'child_process'
 import db from "@astrojs/db";
 
-const branchName = execSync('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
+const branchName = execSync('git branch --show-current', (err, stdout, stderr) => {
   if (err) {
     console.error(err)
     return
