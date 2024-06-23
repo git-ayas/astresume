@@ -7,13 +7,15 @@ import yaml from '@rollup/plugin-yaml';
 import { execSync } from 'child_process'
 import db from "@astrojs/db";
 
-const branchName = execSync('git branch --show-current', (err, stdout, stderr) => {
+const branchSymRefPath = execSync('git symbolic-ref HEAD', (err, stdout, stderr) => {
   if (err) {
     console.error(err)
     return
   }
   console.log(`[Prebuild Tasks - ${(new Date ()).toISOString()}]:`,stdout)
 })
+const branchRefSegments = branchSymRefPath.toString().split('/')
+const  branchName = branchRefSegments[branchRefSegments.length-1]
 
 
 
