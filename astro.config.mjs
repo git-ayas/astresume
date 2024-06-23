@@ -34,7 +34,7 @@ export default defineConfig({
   vite: {
     plugins: [yaml()],
     define: {
-      'import.meta.env.editorBranch': `"${branchName}"` 
+      'import.meta.env.editorBranch': `"${evaledBranchName}"` 
     }
   },
   integrations: [mdx(), sitemap(), tailwind(), react(), db()]
