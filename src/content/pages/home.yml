@@ -40,6 +40,9 @@ skills:
       - title: NestJS
       - title: Spring Boot
       - title: Flask
+      - title: WebRTC
+      - title: PHP
+      - title: Video Streaming And Media Pipelining
   - title: Database
     items:
       - title: MySQL
