@@ -1,4 +1,4 @@
-heroImage: https://avatars.githubusercontent.com/u/32291808?v=4
+heroImage: https://avatars.githubusercontent.com/u/32291808?v=4&size=64
 blurb: An experienced professional with nearly a decade of experience in
   developing and positioning services and products with a focus in agile
   development practices that have provided fast turnarounds in independent and
@@ -11,19 +11,19 @@ phoneNo: +91 7259619029
 email: ayas.ping@gmail.com
 hats:
   - title: Full Stack Developer
-    description: "I have been working as a Full Stack Developer for the past 9
-      years. I have experience in developing web applications using various
-      technologies and frameworks."
+    description: I have been working as a Full Stack Developer for the past 9 years.
+      I have experience in developing web applications using various
+      technologies and frameworks.
   - title: Technical Lead
-    description: "I have experience in leading technical teams, setting up
-      project timelines, and ensuring that the project is delivered on time."
+    description: I have experience in leading technical teams, setting up project
+      timelines, and ensuring that the project is delivered on time.
   - title: DevOps Engineer
-    description: "I have experience in setting up CI/CD pipelines, containerizing
+    description: I have experience in setting up CI/CD pipelines, containerizing
       applications using Docker, and deploying applications on cloud platforms
-      like AWS, Azure, and GCP."
+      like AWS, Azure, and GCP.
   - title: Project Lead
-    description: "I have experience in leading teams of developers, setting up
-      project timelines, and ensuring that the project is delivered on time."
+    description: I have experience in leading teams of developers, setting up
+      project timelines, and ensuring that the project is delivered on time.
 skills:
   - title: Frontend
     items:
