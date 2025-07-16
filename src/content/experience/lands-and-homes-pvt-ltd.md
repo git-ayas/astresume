@@ -6,7 +6,7 @@ description: Led the technical teams from inception, driving innovation and
   collaborative culture, and ensuring seamless user experiences.
 startDate: 12.01.2023
 endDate: 08.01.2025
-orgLogo: /images/uploads/developer.png
+orgLogo: /images/uploads/developer-illustrated.png
 ---
 ▪ Partnered with budding product based organizations like [Lands And Homes](https://www.landsandhomes.com/), [Tolivi](https://tolivi.com/) and [PopularBano](https://popularbano.com).
 
